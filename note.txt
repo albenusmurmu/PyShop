@@ -1,0 +1,4 @@
+Here are the steps to follow our projects :-
+- First Install the venv(if already just do activate)
+- Install django via terminal:
+  - django-admin startproject pyshop . ("pyshop" folder name)
