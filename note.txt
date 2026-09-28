@@ -2,3 +2,25 @@ Here are the steps to follow our projects :-
 - First Install the venv(if already just do activate)
 - Install django via terminal:
   - django-admin startproject pyshop . ("pyshop" folder name)
+
+  - python manage.py migrate // This will create the default SQLite database.
+  - python manage.py runserver // run code or start building
+  - python manage.py startapp products // Create your first Django app
+
+ New Module// Inside Products
+ from django.shortcuts import render
+ - django is a package and shortcut is a module and we're importing the render function
+
+
+-> Steps that follow the code write code :-
+ 1. In view.py first we write/create the custom functions and then
+ -> A view function in Django is a standard Python function that takes a web request as an argument and returns a web response.
+ It acts as the "middleman" or logic layer in Django’s Model-View-Template (MVT) architecture, receiving user input, interacting
+ with database models if necessary, and deciding what content to display back to the browser.
+
+ 2. create a manual file called urls.py
+ URL Mapping : inside products
+
+ 3. link with main file name here are inside urls.py
+
+ 4. create model inside products
