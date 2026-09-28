@@ -23,4 +23,4 @@ Here are the steps to follow our projects :-
 
  3. link with main file name here are inside urls.py
 
- 4. create model inside products
+ 4. create model inside products with their types
