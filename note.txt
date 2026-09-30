@@ -25,3 +25,6 @@ Here are the steps to follow our projects :-
 
  4. create model inside products with their types
 
+ 5. when we create the new model then after we must run this 2 commands on terminal
+- python manage.py makemigrations // to initialize in pre-built file called 0001_initial.py
+- python manage.py migrate // migrate the model schema into DB
