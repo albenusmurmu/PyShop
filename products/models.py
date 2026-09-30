@@ -12,7 +12,7 @@ class Offer(models.Model):
     description = models.TextField(max_length=255)
     discount = models.FloatField()
 
-
+# Test case
     # def __str__(self):
     #     return self.name
     # class Meta:
