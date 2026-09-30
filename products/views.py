@@ -7,3 +7,4 @@ def index(request):
 def calculate(request):
     return HttpResponse('hello world Two')
     # return HttpResponse( 'sum : ', 5 + 10)
+

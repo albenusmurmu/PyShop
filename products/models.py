@@ -5,7 +5,12 @@ class Product(models.Model):
     name = models.CharField(max_length=100)
     price = models.FloatField()
     stock = models.IntegerField(default=0)
-    image_url = models.CharField(max_length=2000)
+    image_url = models.CharField(max_length=2083)
+
+class Offer(models.Model):
+    code = models.CharField(max_length=10)
+    description = models.TextField(max_length=255)
+    discount = models.FloatField()
 
 
     # def __str__(self):
