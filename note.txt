@@ -33,3 +33,5 @@ Here are the steps to follow our projects :-
   - python manage.py createsuperuser
 
   7. Project Sections
+
+  - start creating new template to list the new values for frontend
