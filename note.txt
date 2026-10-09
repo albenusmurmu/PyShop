@@ -34,6 +34,9 @@ Here are the steps to follow our projects :-
 
   7. Project Sections
 
+8. We will create template which is UI friendly and showing products in cards format
+9. 
+
   - start creating new template to list the new values for frontend
   - There are Two Model which help us to define their field types and field limits
 
