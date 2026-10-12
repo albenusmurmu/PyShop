@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}PyShop{% endblock %}</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #14213d;        /* text + navbar */
+      --ink-soft: #5b6478;   /* secondary text */
+      --paper: #f5f3ee;      /* page background */
+      --card: #ffffff;
+      --line: #e4e0d6;
+      --accent: #f2a413;     /* marigold: buttons + highlights */
+      --accent-dark: #d98f08;
+      --image-bg: #efece4;
+    }
+
+    body {
+      font-family: "DM Sans", system-ui, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    h1, h2, h3, h4, .navbar-brand {
+      font-family: "Bricolage Grotesque", "DM Sans", sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    /* ---------- Navbar ---------- */
+    .navbar {
+      background: var(--ink) !important;
+      padding: 0.9rem 0;
+    }
+    .navbar-brand {
+      color: #fff !important;
+      font-weight: 800;
+      font-size: 1.5rem;
+    }
+    .navbar-brand::after {
+      content: "";
+      display: inline-block;
+      width: 0.55rem;
+      height: 0.55rem;
+      margin-left: 0.2rem;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* ---------- Page header ---------- */
+    .page-head {
+      padding: 2.5rem 0 1.5rem;
+    }
+    .page-head h1 {
+      font-weight: 800;
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      margin: 0;
+    }
+    .page-head p {
+      color: var(--ink-soft);
+      margin: 0.35rem 0 0;
+    }
+
+    /* ---------- Product cards ---------- */
+    .product-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    .product-card:hover {
+      border-color: var(--ink);
+      box-shadow: 0 10px 28px rgba(20, 33, 61, .12);
+    }
+    .product-media {
+      aspect-ratio: 1 / 1;           /* every image area is the same size */
+      background: var(--image-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .product-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .product-body {
+      padding: 1rem 1.1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      flex: 1;
+    }
+    .product-name {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      margin: 0;
+    }
+    .product-price {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+    .product-stock {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+    }
+    .product-stock.low { color: #b3541e; font-weight: 500; }
+
+    /* ---------- Buttons ---------- */
+    .btn-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--ink);
+      font-weight: 700;
+      border-radius: 10px;
+      padding: 0.6rem 1rem;
+      transition: background .15s ease, transform .1s ease;
+    }
+    .btn-primary:hover, .btn-primary:focus {
+      background: var(--accent-dark);
+      border-color: var(--accent-dark);
+      color: var(--ink);
+    }
+    .btn-primary:active { transform: translateY(1px); }
+    .btn-primary:focus-visible {
+      outline: 3px solid var(--ink);
+      outline-offset: 2px;
+      box-shadow: none;
+    }
+    .btn-primary:disabled {
+      background: var(--line);
+      border-color: var(--line);
+      color: var(--ink-soft);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/products/">PyShop</a>
+    </div>
+  </nav>
+
+  <main class="container pb-5">
+    {% block content %}
+    {% endblock %}
+  </main>
+<footer>
+    <nav class="navbar navbar-dark bg-dark">
+    <div class="container m-3">
+      <a class="navbar-brand" href="/products/">Home</a>
+    </div>
+  </nav>
+</footer>
+</body>
+</html>

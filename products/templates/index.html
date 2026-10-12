@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Products | PyShop{% endblock %}
+
+{% block content %}
+<div class="page-head">
+  <h1>Products</h1>
+  <p>Everyday essentials, delivered.</p>
+</div>
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+  {% for product in products %}
+  <div class="col">
+    <article class="product-card h-100 d-flex flex-column">
+      <div class="product-media">
+        {% if product.image_url %}
+          <img src="{{ product.image_url }}" alt="{{ product.name }}">
+        {% endif %}
+      </div>
+
+      <div class="product-body">
+        <h3 class="product-name">{{ product.name }}</h3>
+        <div class="product-price">₹{{ product.price|floatformat:"-2" }}</div>
+
+        <div class="mt-auto">
+          {% if product.stock > 0 %}
+            {% if product.stock <= 5 %}
+              <div class="product-stock low mb-2">Only {{ product.stock }} left</div>
+            {% endif %}
+            <button type="button" class="btn btn-primary w-100">Add to cart</button>
+          {% else %}
+            <div class="product-stock mb-2">Out of stock</div>
+            <button type="button" class="btn btn-primary w-100" disabled>Add to cart</button>
+          {% endif %}
+        </div>
+      </div>
+    </article>
+  </div>
+  {% empty %}
+  <p class="text-muted">No products yet. Add some in the admin panel.</p>
+  {% endfor %}
+</div>
+{% endblock %}
